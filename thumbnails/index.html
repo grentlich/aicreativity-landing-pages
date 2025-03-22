@@ -79,9 +79,20 @@
         }
         
         footer {
-            background-color: var(--dark-color);
+            background-color: #2a3042;
             color: white;
         }
+        
+        footer .text-muted,
+        footer a.text-muted {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+        
+        footer a.text-muted:hover {
+            color: white !important;
+            text-decoration: underline !important;
+        }
+        /* Suppression de la règle dupliquée et mal formatée */
     </style>
 </head>
 <body>
@@ -126,8 +137,7 @@
                     </div>
                 </div>
             </div>
-            <img src="https://via.placeholder.com/1200x600/4F46E5/FFFFFF?text=ThumbnailsAI+-+Générateur+de+miniatures+IA" alt="ThumbnailsAI en action" class="img-fluid rounded shadow-lg">
-        </div>
+ </div>
     </section>
 
     <!-- Features Section -->
@@ -244,7 +254,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-5 bg-primary text-white">
+    <section class="py-5 text-black" style="background-color: #c3cfe2">
         <div class="container text-center">
             <h2 class="display-5 fw-bold mb-4" data-i18n="cta.title">Intéressé par notre solution ?</h2>
             <p class="lead mb-4" data-i18n="cta.description">Nous développons actuellement ThumbnailsAI et recherchons des bêta-testeurs pour notre lancement.</p>
@@ -554,7 +564,7 @@
             .use(i18nextBrowserLanguageDetector)
             .init({
                 debug: false,
-                fallbackLng: 'fr',
+                fallbackLng: 'en',
                 resources: resources
             }, function(err, t) {
                 updateContent();
