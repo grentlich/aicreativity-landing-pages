@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ThumbnailsAI - Générateur de miniatures pour réseaux sociaux</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add i18next for translations -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #4F46E5;
+            --secondary-color: #10B981;
+            --dark-color: #1F2937;
+            --light-color: #F9FAFB;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 100px 0 70px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .feature-icon {
+            background-color: var(--primary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-card {
+            transition: transform 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .popular {
+            border: 2px solid var(--primary-color);
+            position: relative;
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Thumbnails<span class="text-primary">AI</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#features" data-i18n="nav.features">Fonctionnalités</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how-it-works" data-i18n="nav.howItWorks">Comment ça marche</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#pricing" data-i18n="nav.pricing">Bientôt disponible</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-3 px-4" href="#pricing" data-i18n="nav.waitlist">Rejoindre la liste d'attente</a></li>
+                </ul>
+                <div class="ms-3 dropdown">
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <li><a class="dropdown-item" href="#" data-language="fr">Français</a></li>
+                        <li><a class="dropdown-item" href="#" data-language="en">English</a></li>
+                        <li><a class="dropdown-item" href="#" data-language="es">Español</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4" data-i18n="hero.title">Créez des miniatures captivantes en quelques secondes</h1>
+                    <p class="lead mb-5" data-i18n="hero.description">ThumbnailsAI utilise l'intelligence artificielle fine-tunée pour générer des miniatures professionnelles qui augmentent vos clics et votre engagement sur tous les réseaux sociaux.</p>
+                    <div class="d-flex justify-content-center gap-3 mb-5">
+                        <a href="#pricing" class="btn btn-primary btn-lg px-4" data-i18n="hero.waitlist">Rejoindre la liste d'attente</a>
+                        <a href="#how-it-works" class="btn btn-outline-primary btn-lg px-4" data-i18n="hero.howItWorks">Comment ça marche</a>
+                    </div>
+                </div>
+            </div>
+            <img src="https://via.placeholder.com/1200x600/4F46E5/FFFFFF?text=ThumbnailsAI+-+Générateur+de+miniatures+IA" alt="ThumbnailsAI en action" class="img-fluid rounded shadow-lg">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 my-5" id="features">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold" data-i18n="features.title">Fonctionnalités exceptionnelles</h2>
+                <p class="lead text-muted" data-i18n="features.subtitle">Découvrez comment ThumbnailsAI révolutionne la création de miniatures</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 data-i18n="features.speed.title">Génération ultra-rapide</h3>
+                        <p class="text-muted" data-i18n="features.speed.description">Créez des miniatures accrocheuses en quelques secondes, pas en heures.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 data-i18n="features.ai.title">IA spécialisée</h3>
+                        <p class="text-muted" data-i18n="features.ai.description">Notre modèle est fine-tuné pour maximiser les clics selon les tendances actuelles.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="feature-icon mx-auto">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3 data-i18n="features.custom.title">Personnalisation complète</h3>
+                        <p class="text-muted" data-i18n="features.custom.description">Ajustez les couleurs, polices et styles pour correspondre à votre marque.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-5 my-5 bg-light" id="how-it-works">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold" data-i18n="howItWorks.title">Comment ça marche</h2>
+                <p class="lead text-muted" data-i18n="howItWorks.subtitle">Créer des miniatures parfaites n'a jamais été aussi simple</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="card border-0 h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 50px; height: 50px;">1</div>
+                            <h4 data-i18n="howItWorks.step1.title">Décrivez votre contenu</h4>
+                            <p class="text-muted" data-i18n="howItWorks.step1.description">Entrez le titre de votre vidéo ou décrivez ce que vous souhaitez mettre en avant.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 50px; height: 50px;">2</div>
+                            <h4 data-i18n="howItWorks.step2.title">Sélectionnez un style</h4>
+                            <p class="text-muted" data-i18n="howItWorks.step2.description">Choisissez parmi nos styles prédéfinis ou personnalisez l'apparence.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 50px; height: 50px;">3</div>
+                            <h4 data-i18n="howItWorks.step3.title">Générez et affinez</h4>
+                            <p class="text-muted" data-i18n="howItWorks.step3.description">Notre IA crée instantanément plusieurs options. Affinez jusqu'à obtenir le résultat parfait.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center mx-auto mb-4" style="width: 50px; height: 50px;">4</div>
+                            <h4 data-i18n="howItWorks.step4.title">Téléchargez et publiez</h4>
+                            <p class="text-muted" data-i18n="howItWorks.step4.description">Téléchargez votre miniature optimisée et augmentez votre taux de clics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section (replacing Pricing) -->
+    <section class="py-5 my-5" id="pricing">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold" data-i18n="pricing.title">Bientôt disponible</h2>
+                <p class="lead text-muted" data-i18n="pricing.subtitle">Nous travaillons actuellement sur notre modèle d'IA spécialisé pour les miniatures</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <div class="card p-5 shadow-sm">
+                        <h3 class="fw-bold mb-4" data-i18n="pricing.waitlist.title">Soyez les premiers informés</h3>
+                        <p class="mb-4" data-i18n="pricing.waitlist.description">Inscrivez-vous à notre liste d'attente pour être parmi les premiers à tester ThumbnailsAI gratuitement et recevoir des mises à jour sur notre lancement.</p>
+                        <form class="row g-3 justify-content-center">
+                            <div class="col-md-8">
+                                <input type="email" class="form-control form-control-lg" data-i18n-placeholder="pricing.waitlist.placeholder" placeholder="Votre adresse email" required>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-primary btn-lg w-100" data-i18n="pricing.waitlist.button">Rejoindre la liste</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4" data-i18n="cta.title">Intéressé par notre solution ?</h2>
+            <p class="lead mb-4" data-i18n="cta.description">Nous développons actuellement ThumbnailsAI et recherchons des bêta-testeurs pour notre lancement.</p>
+            <a href="#pricing" class="btn btn-light btn-lg px-4 me-2" data-i18n="cta.waitlist">Rejoindre la liste d'attente</a>
+            <a href="#" class="btn btn-outline-light btn-lg px-4" data-i18n="cta.learnMore">En savoir plus</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="mb-3">ThumbnailsAI</h5>
+                    <p class="text-muted" data-i18n="footer.description">Révolutionnez vos miniatures avec l'intelligence artificielle et augmentez votre audience sur tous les réseaux sociaux.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3" data-i18n="footer.quickLinks">Liens rapides</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted" data-i18n="footer.home">Accueil</a></li>
+                        <li class="mb-2"><a href="#features" class="text-decoration-none text-muted" data-i18n="footer.features">Fonctionnalités</a></li>
+                        <li class="mb-2"><a href="#how-it-works" class="text-decoration-none text-muted" data-i18n="footer.howItWorks">Comment ça marche</a></li>
+                        <li class="mb-2"><a href="#pricing" class="text-decoration-none text-muted" data-i18n="footer.pricing">Bientôt disponible</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted" data-i18n="footer.blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3" data-i18n="footer.contact">Contact</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted" data-i18n="footer.support">Support</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted" data-i18n="footer.help">Aide</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted" data-i18n="footer.privacy">Politique de confidentialité</a></li>
+                        <li class="mb-2"><a href="#" class="text-decoration-none text-muted" data-i18n="footer.terms">Conditions d'utilisation</a></li>
+                    </ul>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#" class="text-muted"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-muted"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-top border-secondary pt-4 mt-4 text-center">
+                <p class="small text-muted mb-0">&copy; 2023 ThumbnailsAI. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+            </div>
+        </div>
+    </footer>
