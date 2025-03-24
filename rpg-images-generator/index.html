@@ -15,18 +15,296 @@
     <meta property="og:url" content="https://aicreativity.co/rpg-images-generator/">
     <meta property="og:title" content="RPG Images Generator - Bot Discord pour enrichir vos parties de jeu de rôle">
     <meta property="og:description" content="Générez des visuels immersifs pour vos parties de RPG grâce à l'IA. Idéal pour les maîtres du jeu et les joueurs sur Discord.">
-    <meta property="og:image" content="https://aicreativity.co/rpg-images-generator/preview.jpg">
+    
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://aicreativity.co/rpg-images-generator/">
     <meta property="twitter:title" content="RPG Images Generator - Bot Discord pour enrichir vos parties de jeu de rôle">
     <meta property="twitter:description" content="Générez des visuels immersifs pour vos parties de RPG grâce à l'IA. Idéal pour les maîtres du jeu et les joueurs sur Discord.">
-    <meta property="twitter:image" content="https://aicreativity.co/rpg-images-generator/preview.jpg">
+    
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
+     
+    <!-- Add these before your internationalization script -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    
+    <!-- Internationalization Script -->
+    <script>
+        // Translations data
+        const translations = {
+            'en': {
+                'page-title': 'RPG Images Generator - Discord Bot to Enhance Your Role-Playing Games',
+                'nav-features': 'Features',
+                'nav-how-it-works': 'How It Works',
+                'nav-use-cases': 'Use Cases',
+                'nav-waitlist': 'Waitlist',
+                'nav-join-beta': 'Join Beta',
+                
+                'hero-title': 'Enhance Your RPG Sessions with AI-Generated Images',
+                'hero-subtitle': 'A Discord bot that revolutionizes the visual experience of your role-playing games. Generate locations, characters, creatures, and objects tailored to your universe in seconds.',
+                'hero-btn-join': 'Join Beta',
+                'hero-btn-how': 'How It Works',
+                
+                'features-title': 'Exceptional Features',
+                'features-subtitle': 'Discover how RPG Images Generator transforms your role-playing sessions',
+                'feature-1-title': 'AI Image Generation',
+                'feature-1-desc': 'Create high-quality visuals adapted to your game universe in seconds.',
+                'feature-2-title': 'Discord Integration',
+                'feature-2-desc': 'Use simple commands to generate and share images directly in your channels.',
+                'feature-3-title': 'Organized Library',
+                'feature-3-desc': 'Store and organize your images for quick access during your game sessions.',
+                'feature-4-title': 'Multi-User',
+                'feature-4-desc': 'Allow all your players to create their own character visuals.',
+                'feature-5-title': 'Various Styles',
+                'feature-5-desc': 'Fantasy, cyberpunk, steampunk, post-apocalyptic... Adapt the style to your universe.',
+                'feature-6-title': 'Instant Generation',
+                'feature-6-desc': 'React to unexpected player actions with on-the-fly generated visuals.',
+                
+                'how-title': 'How It Works',
+                'how-subtitle': 'A three-phase experience for total immersion',
+                'how-1-title': 'Adventure Preparation',
+                'how-1-desc': 'Before the game, the GM uses our web application to generate all the visual elements needed for their scenario.',
+                'how-1-li-1': 'Locations, creatures, objects, maps, NPCs',
+                'how-1-li-2': 'Graphic style consistent with the game universe',
+                'how-1-li-3': 'Storage and organization of images for easy access',
+                'how-2-title': 'Character Creation',
+                'how-2-desc': 'Players access the application to generate their character\'s visual.',
+                'how-2-li-1': 'Detailed portraits according to character characteristics',
+                'how-2-li-2': 'Various styles (fantasy, cyberpunk, steampunk...)',
+                'how-2-li-3': 'Customization according to game characteristics',
+                'how-3-title': 'Real-Time Interaction',
+                'how-3-desc': 'Once the game is launched, the Discord bot allows you to:',
+                'how-3-li-1': 'Easily broadcast generated images in dedicated channels',
+                'how-3-li-2': 'Generate new images on the fly via Discord commands',
+                'how-3-li-3': 'Streamline narration with instantly created visuals',
+                
+                'use-cases-title': 'Use Cases',
+                'use-cases-subtitle': 'How GMs and players can use RPG Images Generator',
+                'use-gm-title': 'For Game Masters',
+                'use-gm-1-title': 'Location Creation',
+                'use-gm-1-desc': 'Generate detailed visuals for each important location in your campaign.',
+                'use-gm-2-title': 'Custom Bestiary',
+                'use-gm-2-desc': 'Create unique monsters and creatures adapted to your universe.',
+                'use-gm-3-title': 'Magic Items',
+                'use-gm-3-desc': 'Illustrate the treasures and artifacts your players will discover.',
+                'use-gm-4-title': 'Memorable NPCs',
+                'use-gm-4-desc': 'Bring non-player characters to life with detailed portraits.',
+                'use-player-title': 'For Players',
+                'use-player-1-title': 'Character Portraits',
+                'use-player-1-desc': 'Create a faithful visual representation of your character.',
+                'use-player-2-title': 'Flashbacks',
+                'use-player-2-desc': 'Illustrate your character\'s past during narrative moments.',
+                'use-player-3-title': 'Personal Locations',
+                'use-player-3-desc': 'Visualize your character\'s home, hideout, or sanctuary.',
+                'use-player-4-title': 'Expressions and Emotions',
+                'use-player-4-desc': 'Show different facets of your character according to situations.',
+                
+                'waitlist-title': 'Join the Beta',
+                'waitlist-subtitle': 'Be among the first to test RPG Images Generator',
+                'waitlist-card-title': 'Early Access',
+                'waitlist-card-desc': 'Sign up for our waitlist to be among the first to test RPG Images Generator for free and receive updates on our launch.',
+                'waitlist-email-placeholder': 'Your email address',
+                'waitlist-btn': 'Join Beta',
+                'waitlist-gm-checkbox': 'I am a Game Master',
+                'waitlist-player-checkbox': 'I am a Player',
+                
+                'faq-title': 'Frequently Asked Questions',
+                'faq-subtitle': 'Everything you need to know about RPG Images Generator',
+                'faq-1-q': 'Does RPG Images Generator work with all game systems?',
+                'faq-1-a': 'Yes! Our tool is compatible with all role-playing game systems (D&D, Pathfinder, Cyberpunk, Call of Cthulhu, etc.). You can generate images adapted to any universe or style.',
+                'faq-2-q': 'How many images can I generate?',
+                'faq-2-a': 'During the beta phase, you will have a quota of 100 images per month. We plan different packages for the official launch, including a free plan with a limited number of images and premium plans for more active GMs and groups.',
+                'faq-3-q': 'Do I need technical skills to use the tool?',
+                'faq-3-a': 'Absolutely not! Our interface is designed to be intuitive and accessible to everyone. If you know how to use Discord, you\'ll know how to use RPG Images Generator. The commands are simple and the web interface is guided.',
+                'faq-4-q': 'When will the full version be available?',
+                'faq-4-a': 'We plan to launch the full version in the next 3 months. Beta members will have priority access and exclusive benefits during the official launch.',
+                'faq-5-q': 'Can I use the generated images outside of Discord?',
+                'faq-5-a': 'Yes, all generated images are downloadable and you can use them for your character sheets, campaign notes, or even to illustrate your game stories on social media.',
+                
+                'cta-title': 'Ready to revolutionize your RPG sessions?',
+                'cta-subtitle': 'Join our beta and be among the first to transform the visual experience of your role-playing games.',
+                'cta-btn': 'Join Beta Now',
+                
+                'footer-title': 'RPG Images Generator',
+                'footer-desc': 'A Discord bot that revolutionizes the visual experience of your role-playing games with AI-generated images.',
+                'footer-links': 'Links',
+                'footer-resources': 'Resources',
+                'footer-blog': 'Blog',
+                'footer-docs': 'Documentation',
+                'footer-tutorials': 'Tutorials',
+                'footer-support': 'Support',
+                'footer-stay-informed': 'Stay Informed',
+                'footer-newsletter': 'Subscribe to our newsletter to receive the latest news and updates.',
+                'footer-email-placeholder': 'Your email',
+                'footer-subscribe': 'Subscribe',
+                'footer-copyright': '© 2023 RPG Images Generator. All rights reserved.',
+                'footer-privacy': 'Privacy Policy',
+                'footer-terms': 'Terms of Use'
+            },
+            'fr': {
+                'page-title': 'RPG Images Generator - Bot Discord pour enrichir vos parties de jeu de rôle',
+                'nav-features': 'Fonctionnalités',
+                'nav-how-it-works': 'Comment ça marche',
+                'nav-use-cases': 'Cas d\'utilisation',
+                'nav-waitlist': 'Liste d\'attente',
+                'nav-join-beta': 'Rejoindre la bêta',
+                
+                'hero-title': 'Enrichissez vos parties de RPG avec des images générées par IA',
+                'hero-subtitle': 'Un bot Discord qui révolutionne l\'expérience visuelle de vos jeux de rôle. Générez des lieux, personnages, créatures et objets adaptés à votre univers en quelques secondes.',
+                'hero-btn-join': 'Rejoindre la bêta',
+                'hero-btn-how': 'Comment ça marche',
+                
+                'features-title': 'Fonctionnalités exceptionnelles',
+                'features-subtitle': 'Découvrez comment RPG Images Generator transforme vos parties de jeu de rôle',
+                'feature-1-title': 'Génération d\'images IA',
+                'feature-1-desc': 'Créez des visuels de haute qualité adaptés à votre univers de jeu en quelques secondes.',
+                'feature-2-title': 'Intégration Discord',
+                'feature-2-desc': 'Utilisez des commandes simples pour générer et partager des images directement dans vos channels.',
+                'feature-3-title': 'Bibliothèque organisée',
+                'feature-3-desc': 'Stockez et organisez vos images pour un accès rapide pendant vos sessions de jeu.',
+                'feature-4-title': 'Multi-utilisateurs',
+                'feature-4-desc': 'Permettez à tous vos joueurs de créer leurs propres visuels de personnage.',
+                'feature-5-title': 'Styles variés',
+                'feature-5-desc': 'Fantasy, cyberpunk, steampunk, post-apocalyptique... Adaptez le style à votre univers.',
+                'feature-6-title': 'Génération instantanée',
+                'feature-6-desc': 'Réagissez aux actions imprévues des joueurs avec des visuels générés à la volée.',
+                
+                'how-title': 'Comment ça marche',
+                'how-subtitle': 'Une expérience en trois phases pour une immersion totale',
+                'how-1-title': 'Préparation de l\'aventure',
+                'how-1-desc': 'Avant la partie, le MJ utilise notre application web pour générer tous les éléments visuels nécessaires à son scénario.',
+                'how-1-li-1': 'Lieux, créatures, objets, cartes, PNJ',
+                'how-1-li-2': 'Style graphique cohérent avec l\'univers du jeu',
+                'how-1-li-3': 'Stockage et organisation des images pour un accès facile',
+                'how-2-title': 'Création des personnages',
+                'how-2-desc': 'Les joueurs accèdent à l\'application pour générer le visuel de leur personnage.',
+                'how-2-li-1': 'Portraits détaillés selon les caractéristiques du personnage',
+                'how-2-li-2': 'Styles variés (fantasy, cyberpunk, steampunk...)',
+                'how-2-li-3': 'Personnalisation selon les caractéristiques du jeu',
+                'how-3-title': 'Interaction en temps réel',
+                'how-3-desc': 'Une fois la partie lancée, le bot Discord permet de :',
+                'how-3-li-1': 'Diffuser facilement les images générées dans les channels dédiés',
+                'how-3-li-2': 'Générer à la volée de nouvelles images via des commandes Discord',
+                'how-3-li-3': 'Fluidifier la narration avec des visuels créés instantanément',
+                
+                'use-cases-title': 'Cas d\'utilisation',
+                'use-cases-subtitle': 'Comment les MJ et joueurs peuvent utiliser RPG Images Generator',
+                'use-gm-1-title': 'Création de lieux',
+                'use-gm-1-desc': 'Générez des visuels détaillés pour chaque lieu important de votre campagne.',
+                'use-gm-2-title': 'Bestiaire personnalisé',
+                'use-gm-2-desc': 'Créez des monstres et créatures uniques adaptés à votre univers.',
+                'use-gm-3-title': 'Objets magiques',
+                'use-gm-3-desc': 'Illustrez les trésors et artefacts que vos joueurs découvriront.',
+                'use-gm-4-title': 'PNJ mémorables',
+                'use-gm-4-desc': 'Donnez vie aux personnages non-joueurs avec des portraits détaillés.',
+                'use-player-title': 'Pour les Joueurs',
+                'use-player-1-title': 'Portraits de personnage',
+                'use-player-1-desc': 'Créez une représentation visuelle fidèle de votre personnage.',
+                'use-player-2-title': 'Flashbacks',
+                'use-player-2-desc': 'Illustrez le passé de votre personnage lors des moments narratifs.',
+                'use-player-3-title': 'Lieux personnels',
+                'use-player-3-desc': 'Visualisez la maison, le repaire ou le sanctuaire de votre personnage.',
+                'use-player-4-title': 'Expressions et émotions',
+                'use-player-4-desc': 'Montrez différentes facettes de votre personnage selon les situations.',
+                
+                'waitlist-title': 'Rejoignez la bêta',
+                'waitlist-subtitle': 'Soyez parmi les premiers à tester RPG Images Generator',
+                'waitlist-card-title': 'Accès anticipé',
+                'waitlist-card-desc': 'Inscrivez-vous à notre liste d\'attente pour être parmi les premiers à tester RPG Images Generator gratuitement et recevoir des mises à jour sur notre lancement.',
+                'waitlist-email-placeholder': 'Votre adresse email',
+                'waitlist-btn': 'Rejoindre la bêta',
+                'waitlist-gm-checkbox': 'Je suis Maître du Jeu',
+                'waitlist-player-checkbox': 'Je suis Joueur',
+                
+                'faq-title': 'Questions fréquentes',
+                'faq-subtitle': 'Tout ce que vous devez savoir sur RPG Images Generator',
+                'faq-1-q': 'Est-ce que RPG Images Generator fonctionne avec tous les systèmes de jeu ?',
+                'faq-1-a': 'Oui ! Notre outil est compatible avec tous les systèmes de jeu de rôle (D&D, Pathfinder, Cyberpunk, Call of Cthulhu, etc.). Vous pouvez générer des images adaptées à n\'importe quel univers ou style.',
+                'faq-2-q': 'Combien d\'images puis-je générer ?',
+                'faq-2-a': 'Pendant la phase bêta, vous aurez un quota de 100 images par mois. Nous prévoyons différents forfaits pour le lancement officiel, y compris un plan gratuit avec un nombre limité d\'images et des plans premium pour les MJ et groupes plus actifs.',
+                'faq-3-q': 'Faut-il des compétences techniques pour utiliser l\'outil ?',
+                'faq-3-a': 'Absolument pas ! Notre interface est conçue pour être intuitive et accessible à tous. Si vous savez utiliser Discord, vous saurez utiliser RPG Images Generator. Les commandes sont simples et l\'interface web est guidée.',
+                'faq-4-q': 'Quand sera disponible la version complète ?',
+                'faq-4-a': 'Nous prévoyons de lancer la version complète dans les 3 prochains mois. Les membres de la bêta auront un accès prioritaire et des avantages exclusifs lors du lancement officiel.',
+                'faq-5-q': 'Puis-je utiliser les images générées en dehors de Discord ?',
+                'faq-5-a': 'Oui, toutes les images générées sont téléchargeables et vous pouvez les utiliser pour vos fiches de personnage, vos notes de campagne, ou même pour illustrer vos récits de partie sur les réseaux sociaux.',
+                
+                'cta-title': 'Prêt à révolutionner vos parties de RPG ?',
+                'cta-subtitle': 'Rejoignez notre bêta et soyez parmi les premiers à transformer l\'expérience visuelle de vos jeux de rôle.',
+                'cta-btn': 'Rejoindre la bêta maintenant',
+                
+                'footer-title': 'RPG Images Generator',
+                'footer-desc': 'Un bot Discord qui révolutionne l\'expérience visuelle de vos jeux de rôle avec des images générées par IA.',
+                'footer-links': 'Liens',
+                'footer-resources': 'Ressources',
+                'footer-blog': 'Blog',
+                'footer-docs': 'Documentation',
+                'footer-tutorials': 'Tutoriels',
+                'footer-support': 'Support',
+                'footer-stay-informed': 'Restez informé',
+                'footer-newsletter': 'Abonnez-vous à notre newsletter pour recevoir les dernières nouvelles et mises à jour.',
+                'footer-email-placeholder': 'Votre email',
+                'footer-subscribe': 'S\'abonner',
+                'footer-copyright': '© 2023 RPG Images Generator. Tous droits réservés.',
+                'footer-privacy': 'Politique de confidentialité',
+                'footer-terms': 'Conditions d\'utilisation'
+            }
+        };
+        // Convert translations to i18next format
+        const resources = {
+            en: {
+                translation: translations.en
+            },
+            fr: {
+                translation: translations.fr
+            }
+        };
+        // Initialize i18next
+        i18next
+            .use(i18nextBrowserLanguageDetector)
+            .init({
+                debug: false,
+                fallbackLng: 'en',
+                resources: resources
+            }, function(err, t) {
+                updateContent();
+            });
+
+        // Update content based on language
+        function updateContent() {
+            $('[data-i18n]').each(function() {
+                const key = $(this).attr('data-i18n');
+                $(this).html(i18next.t(key));
+            });
+            
+            // Update placeholder attributes
+            $('[data-i18n-placeholder]').each(function() {
+                const key = $(this).attr('data-i18n-placeholder');
+                $(this).attr('placeholder', i18next.t(key));
+            });
+        }
+
+        // Language switcher
+        $(document).on('click', '[data-language]', function(e) {
+            e.preventDefault();
+            const lang = $(this).attr('data-language');
+            i18next.changeLanguage(lang, function() {
+                updateContent();
+            });
+        });
+
+        // Detect browser language on load
+        $(document).ready(function() {
+            updateContent();
+        });
+        </script>
+
+
     <style>
         :root {
             --primary-color: #7289DA; /* Discord color */
@@ -220,11 +498,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#features">Fonctionnalités</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#how-it-works">Comment ça marche</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#use-cases">Cas d'utilisation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#waitlist">Liste d'attente</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-3 px-4" href="#waitlist">Rejoindre la bêta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features" data-i18n="nav-features">Fonctionnalités</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how-it-works" data-i18n="nav-how-it-works">Comment ça marche</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#use-cases" data-i18n="nav-use-cases">Cas d'utilisation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#waitlist" data-i18n="nav-waitlist">Liste d'attente</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-3 px-4" href="#waitlist" data-i18n="nav-join-beta">Rejoindre la bêta</a></li>
+                    <!-- Language Selector -->
+                    <li class="nav-item dropdown ms-3">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-globe"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end bg-darker" aria-labelledby="languageDropdown">
+                            <li><a class="dropdown-item text-white" href="#" data-language="en">English</a></li>
+                            <li><a class="dropdown-item text-white" href="#" data-language="fr">Français</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -235,11 +523,11 @@
         <div class="container hero-content text-center">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <h1 class="display-4 fw-bold mb-4">Enrichissez vos parties de RPG avec des images générées par IA</h1>
-                    <p class="lead mb-5">Un bot Discord qui révolutionne l'expérience visuelle de vos jeux de rôle. Générez des lieux, personnages, créatures et objets adaptés à votre univers en quelques secondes.</p>
+                    <h1 class="display-4 fw-bold mb-4" data-i18n="hero-title">Enrichissez vos parties de RPG avec des images générées par IA</h1>
+                    <p class="lead mb-5" data-i18n="hero-subtitle">Un bot Discord qui révolutionne l'expérience visuelle de vos jeux de rôle. Générez des lieux, personnages, créatures et objets adaptés à votre univers en quelques secondes.</p>
                     <div class="d-flex justify-content-center gap-3 mb-5">
-                        <a href="#waitlist" class="btn btn-primary btn-lg px-4">Rejoindre la bêta</a>
-                        <a href="#how-it-works" class="btn btn-outline-light btn-lg px-4">Comment ça marche</a>
+                        <a href="#waitlist" class="btn btn-primary btn-lg px-4" data-i18n="hero-btn-join">Rejoindre la bêta</a>
+                        <a href="#how-it-works" class="btn btn-outline-light btn-lg px-4" data-i18n="hero-btn-how">Comment ça marche</a>
                     </div>
                 </div>
             </div>
@@ -251,8 +539,8 @@
     <section class="py-5 my-5" id="features">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Fonctionnalités exceptionnelles</h2>
-                <p class="lead text-muted">Découvrez comment RPG Images Generator transforme vos parties de jeu de rôle</p>
+                <h2 class="display-5 fw-bold" data-i18n="features-title">Fonctionnalités exceptionnelles</h2>
+                <p class="lead text-muted" data-i18n="features-subtitle">Découvrez comment RPG Images Generator transforme vos parties de jeu de rôle</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-4">
@@ -260,8 +548,8 @@
                         <div class="feature-icon mx-auto">
                             <i class="fas fa-paint-brush"></i>
                         </div>
-                        <h3>Génération d'images IA</h3>
-                        <p class="text-muted">Créez des visuels de haute qualité adaptés à votre univers de jeu en quelques secondes.</p>
+                        <h3 data-i18n="feature-1-title">Génération d'images IA</h3>
+                        <p class="text-muted" data-i18n="feature-1-desc">Créez des visuels de haute qualité adaptés à votre univers de jeu en quelques secondes.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -269,8 +557,8 @@
                         <div class="feature-icon mx-auto">
                             <i class="fab fa-discord"></i>
                         </div>
-                        <h3>Intégration Discord</h3>
-                        <p class="text-muted">Utilisez des commandes simples pour générer et partager des images directement dans vos channels.</p>
+                        <h3 data-i18n="feature-2-title">Intégration Discord</h3>
+                        <p class="text-muted" data-i18n="feature-2-desc">Utilisez des commandes simples pour générer et partager des images directement dans vos channels.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -278,8 +566,8 @@
                         <div class="feature-icon mx-auto">
                             <i class="fas fa-database"></i>
                         </div>
-                        <h3>Bibliothèque organisée</h3>
-                        <p class="text-muted">Stockez et organisez vos images pour un accès rapide pendant vos sessions de jeu.</p>
+                        <h3 data-i18n="feature-3-title">Bibliothèque organisée</h3>
+                        <p class="text-muted" data-i18n="feature-3-desc">Stockez et organisez vos images pour un accès rapide pendant vos sessions de jeu.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -287,8 +575,8 @@
                         <div class="feature-icon mx-auto">
                             <i class="fas fa-users"></i>
                         </div>
-                        <h3>Multi-utilisateurs</h3>
-                        <p class="text-muted">Permettez à tous vos joueurs de créer leurs propres visuels de personnage.</p>
+                        <h3 data-i18n="feature-4-title">Multi-utilisateurs</h3>
+                        <p class="text-muted" data-i18n="feature-4-desc">Permettez à tous vos joueurs de créer leurs propres visuels de personnage.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -296,8 +584,8 @@
                         <div class="feature-icon mx-auto">
                             <i class="fas fa-palette"></i>
                         </div>
-                        <h3>Styles variés</h3>
-                        <p class="text-muted">Fantasy, cyberpunk, steampunk, post-apocalyptique... Adaptez le style à votre univers.</p>
+                        <h3 data-i18n="feature-5-title">Styles variés</h3>
+                        <p class="text-muted" data-i18n="feature-5-desc">Fantasy, cyberpunk, steampunk, post-apocalyptique... Adaptez le style à votre univers.</p>
                     </div>
                 </div>
                 <div class="col-md-4">
@@ -305,8 +593,8 @@
                         <div class="feature-icon mx-auto">
                             <i class="fas fa-bolt"></i>
                         </div>
-                        <h3>Génération instantanée</h3>
-                        <p class="text-muted">Réagissez aux actions imprévues des joueurs avec des visuels générés à la volée.</p>
+                        <h3 data-i18n="feature-6-title">Génération instantanée</h3>
+                        <p class="text-muted" data-i18n="feature-6-desc">Réagissez aux actions imprévues des joueurs avec des visuels générés à la volée.</p>
                     </div>
                 </div>
             </div>
@@ -317,8 +605,8 @@
     <section class="py-5 my-5 bg-darker" id="how-it-works">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Comment ça marche</h2>
-                <p class="lead text-muted">Une expérience en trois phases pour une immersion totale</p>
+                <h2 class="display-5 fw-bold" data-i18n="how-title">Comment ça marche</h2>
+                <p class="lead text-muted" data-i18n="how-subtitle">Une expérience en trois phases pour une immersion totale</p>
             </div>
             
             <div class="row mb-5">
@@ -326,13 +614,13 @@
                     <div class="phase-card h-100">
                         <div class="d-flex align-items-center mb-3">
                             <div class="phase-number">1</div>
-                            <h3 class="mb-0">Préparation de l'aventure</h3>
+                            <h3 class="mb-0" data-i18n="how-1-title">Préparation de l'aventure</h3>
                         </div>
-                        <p class="text-muted">Avant la partie, le MJ utilise notre application web pour générer tous les éléments visuels nécessaires à son scénario.</p>
+                        <p class="text-muted" data-i18n="how-1-desc">Avant la partie, le MJ utilise notre application web pour générer tous les éléments visuels nécessaires à son scénario.</p>
                         <ul class="text-muted">
-                            <li>Lieux, créatures, objets, cartes, PNJ</li>
-                            <li>Style graphique cohérent avec l'univers du jeu</li>
-                            <li>Stockage et organisation des images pour un accès facile</li>
+                            <li data-i18n="how-1-li-1">Lieux, créatures, objets, cartes, PNJ</li>
+                            <li data-i18n="how-1-li-2">Style graphique cohérent avec l'univers du jeu</li>
+                            <li data-i18n="how-1-li-3">Stockage et organisation des images pour un accès facile</li>
                         </ul>
                     </div>
                 </div>
@@ -340,13 +628,13 @@
                     <div class="phase-card h-100">
                         <div class="d-flex align-items-center mb-3">
                             <div class="phase-number">2</div>
-                            <h3 class="mb-0">Création des personnages</h3>
+                            <h3 class="mb-0" data-i18n="how-2-title">Création des personnages</h3>
                         </div>
-                        <p class="text-muted">Les joueurs accèdent à l'application pour générer le visuel de leur personnage.</p>
+                        <p class="text-muted" data-i18n="how-2-desc">Les joueurs accèdent à l'application pour générer le visuel de leur personnage.</p>
                         <ul class="text-muted">
-                            <li>Portraits détaillés selon les caractéristiques du personnage</li>
-                            <li>Styles variés (fantasy, cyberpunk, steampunk...)</li>
-                            <li>Personnalisation selon les caractéristiques du jeu</li>
+                            <li data-i18n="how-2-li-1">Portraits détaillés selon les caractéristiques du personnage</li>
+                            <li data-i18n="how-2-li-2">Styles variés (fantasy, cyberpunk, steampunk...)</li>
+                            <li data-i18n="how-2-li-3">Personnalisation selon les caractéristiques du jeu</li>
                         </ul>
                     </div>
                 </div>
@@ -354,19 +642,17 @@
                     <div class="phase-card h-100">
                         <div class="d-flex align-items-center mb-3">
                             <div class="phase-number">3</div>
-                            <h3 class="mb-0">Interaction en temps réel</h3>
+                            <h3 class="mb-0" data-i18n="how-3-title">Interaction en temps réel</h3>
                         </div>
-                        <p class="text-muted">Une fois la partie lancée, le bot Discord permet de :</p>
+                        <p class="text-muted" data-i18n="how-3-desc">Une fois la partie lancée, le bot Discord permet de :</p>
                         <ul class="text-muted">
-                            <li>Diffuser facilement les images générées dans les channels dédiés</li>
-                            <li>Générer à la volée de nouvelles images via des commandes Discord</li>
-                            <li>Fluidifier la narration avec des visuels créés instantanément</li>
+                            <li data-i18n="how-3-li-1">Diffuser facilement les images générées dans les channels dédiés</li>
+                            <li data-i18n="how-3-li-2">Générer à la volée de nouvelles images via des commandes Discord</li>
+                            <li data-i18n="how-3-li-3">Fluidifier la narration avec des visuels créés instantanément</li>
                         </ul>
                     </div>
                 </div>
             </div>
-            
-            
         </div>
     </section>
 
@@ -374,50 +660,50 @@
     <section class="py-5 my-5" id="use-cases">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Cas d'utilisation</h2>
-                <p class="lead text-muted">Comment les MJ et joueurs peuvent utiliser RPG Images Generator</p>
+                <h2 class="display-5 fw-bold" data-i18n="use-cases-title">Cas d'utilisation</h2>
+                <p class="lead text-muted" data-i18n="use-cases-subtitle">Comment les MJ et joueurs peuvent utiliser RPG Images Generator</p>
             </div>
             
             <div class="row g-4">
                 <div class="col-md-6">
                     <div class="card p-4 h-100">
-                        <h3 class="mb-3">Pour les Maîtres du Jeu</h3>
+                        <h3 class="mb-3" data-i18n="use-gm-title">Pour les Maîtres du Jeu</h3>
                         <div class="mb-4">
-                            <h5><i class="fas fa-map-marked-alt me-2 text-primary"></i> Création de lieux</h5>
-                            <p class="text-muted">Générez des visuels détaillés pour chaque lieu important de votre campagne.</p>
+                            <h5><i class="fas fa-map-marked-alt me-2 text-primary"></i> <span data-i18n="use-gm-1-title">Création de lieux</span></h5>
+                            <p class="text-muted" data-i18n="use-gm-1-desc">Générez des visuels détaillés pour chaque lieu important de votre campagne.</p>
                         </div>
                         <div class="mb-4">
-                            <h5><i class="fas fa-dragon me-2 text-primary"></i> Bestiaire personnalisé</h5>
-                            <p class="text-muted">Créez des monstres et créatures uniques adaptés à votre univers.</p>
+                            <h5><i class="fas fa-dragon me-2 text-primary"></i> <span data-i18n="use-gm-2-title">Bestiaire personnalisé</span></h5>
+                            <p class="text-muted" data-i18n="use-gm-2-desc">Créez des monstres et créatures uniques adaptés à votre univers.</p>
                         </div>
                         <div class="mb-4">
-                            <h5><i class="fas fa-scroll me-2 text-primary"></i> Objets magiques</h5>
-                            <p class="text-muted">Illustrez les trésors et artefacts que vos joueurs découvriront.</p>
+                            <h5><i class="fas fa-scroll me-2 text-primary"></i> <span data-i18n="use-gm-3-title">Objets magiques</span></h5>
+                            <p class="text-muted" data-i18n="use-gm-3-desc">Illustrez les trésors et artefacts que vos joueurs découvriront.</p>
                         </div>
                         <div>
-                            <h5><i class="fas fa-user-secret me-2 text-primary"></i> PNJ mémorables</h5>
-                            <p class="text-muted">Donnez vie aux personnages non-joueurs avec des portraits détaillés.</p>
+                            <h5><i class="fas fa-user-secret me-2 text-primary"></i> <span data-i18n="use-gm-4-title">PNJ mémorables</span></h5>
+                            <p class="text-muted" data-i18n="use-gm-4-desc">Donnez vie aux personnages non-joueurs avec des portraits détaillés.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card p-4 h-100">
-                        <h3 class="mb-3">Pour les Joueurs</h3>
+                        <h3 class="mb-3" data-i18n="use-player-title">Pour les Joueurs</h3>
                         <div class="mb-4">
-                            <h5><i class="fas fa-user-circle me-2 text-primary"></i> Portraits de personnage</h5>
-                            <p class="text-muted">Créez une représentation visuelle fidèle de votre personnage.</p>
+                            <h5><i class="fas fa-user-circle me-2 text-primary"></i> <span data-i18n="use-player-1-title">Portraits de personnage</span></h5>
+                            <p class="text-muted" data-i18n="use-player-1-desc">Créez une représentation visuelle fidèle de votre personnage.</p>
                         </div>
                         <div class="mb-4">
-                            <h5><i class="fas fa-history me-2 text-primary"></i> Flashbacks</h5>
-                            <p class="text-muted">Illustrez le passé de votre personnage lors des moments narratifs.</p>
+                            <h5><i class="fas fa-history me-2 text-primary"></i> <span data-i18n="use-player-2-title">Flashbacks</span></h5>
+                            <p class="text-muted" data-i18n="use-player-2-desc">Illustrez le passé de votre personnage lors des moments narratifs.</p>
                         </div>
                         <div class="mb-4">
-                            <h5><i class="fas fa-campground me-2 text-primary"></i> Lieux personnels</h5>
-                            <p class="text-muted">Visualisez la maison, le repaire ou le sanctuaire de votre personnage.</p>
+                            <h5><i class="fas fa-campground me-2 text-primary"></i> <span data-i18n="use-player-3-title">Lieux personnels</span></h5>
+                            <p class="text-muted" data-i18n="use-player-3-desc">Visualisez la maison, le repaire ou le sanctuaire de votre personnage.</p>
                         </div>
                         <div>
-                            <h5><i class="fas fa-theater-masks me-2 text-primary"></i> Expressions et émotions</h5>
-                            <p class="text-muted">Montrez différentes facettes de votre personnage selon les situations.</p>
+                            <h5><i class="fas fa-theater-masks me-2 text-primary"></i> <span data-i18n="use-player-4-title">Expressions et émotions</span></h5>
+                            <p class="text-muted" data-i18n="use-player-4-desc">Montrez différentes facettes de votre personnage selon les situations.</p>
                         </div>
                     </div>
                 </div>
@@ -432,32 +718,32 @@
     <section class="py-5 my-5" id="waitlist">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Rejoignez la bêta</h2>
-                <p class="lead text-muted">Soyez parmi les premiers à tester RPG Images Generator</p>
+                <h2 class="display-5 fw-bold" data-i18n="waitlist-title">Rejoignez la bêta</h2>
+                <p class="lead text-muted" data-i18n="waitlist-subtitle">Soyez parmi les premiers à tester RPG Images Generator</p>
             </div>
             
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
                     <div class="card p-5 shadow-sm">
-                        <h3 class="fw-bold mb-4 text-white">Accès anticipé</h3>
-                        <p class="mb-4 text-white">Inscrivez-vous à notre liste d'attente pour être parmi les premiers à tester RPG Images Generator gratuitement et recevoir des mises à jour sur notre lancement.</p>
+                        <h3 class="fw-bold mb-4 text-white" data-i18n="waitlist-card-title">Accès anticipé</h3>
+                        <p class="mb-4 text-white" data-i18n="waitlist-card-desc">Inscrivez-vous à notre liste d'attente pour être parmi les premiers à tester RPG Images Generator gratuitement et recevoir des mises à jour sur notre lancement.</p>
                         <form action="https://formspree.io/f/xgegvnrj" method="POST" class="row g-3 justify-content-center">
                             <div class="col-md-8">
-                                <input type="email" name="email" class="form-control form-control-lg bg-dark text-white" placeholder="Votre adresse email" required>
+                                <input type="email" name="email" class="form-control form-control-lg bg-dark text-white" data-i18n-placeholder="waitlist-email-placeholder" placeholder="Votre adresse email" required>
                             </div>
                             <div class="col-md-4">
-                                <button type="submit" class="btn btn-primary btn-lg w-100">Rejoindre la bêta</button>
+                                <button type="submit" class="btn btn-primary btn-lg w-100" data-i18n="waitlist-btn">Rejoindre la bêta</button>
                             </div>
                             <div class="col-12 mt-3">
                                 <div class="form-check" style="text-align: left; padding-left: 1.5rem;">
                                     <input class="form-check-input" type="checkbox" id="mjCheckbox" name="role" value="mj">
-                                    <label class="form-check-label text-white" for="mjCheckbox" style="margin-left: -5px;">
+                                    <label class="form-check-label text-white" for="mjCheckbox" style="margin-left: -5px;" data-i18n="waitlist-gm-checkbox">
                                         Je suis Maître du Jeu
                                     </label>
                                 </div>
                                 <div class="form-check" style="text-align: left; padding-left: 1.5rem;">
                                     <input class="form-check-input" type="checkbox" id="playerCheckbox" name="role" value="player">
-                                    <label class="form-check-label text-white" for="playerCheckbox" style="margin-left: -5px;">
+                                    <label class="form-check-label text-white" for="playerCheckbox" style="margin-left: -5px;" data-i18n="waitlist-player-checkbox">
                                         Je suis Joueur
                                     </label>
                                 </div>
@@ -473,8 +759,8 @@
     <section class="py-5 my-5 bg-darker">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="display-5 fw-bold">Questions fréquentes</h2>
-                <p class="lead text-muted">Tout ce que vous devez savoir sur RPG Images Generator</p>
+                <h2 class="display-5 fw-bold" data-i18n="faq-title">Questions fréquentes</h2>
+                <p class="lead text-muted" data-i18n="faq-subtitle">Tout ce que vous devez savoir sur RPG Images Generator</p>
             </div>
             
             <div class="row justify-content-center">
@@ -482,60 +768,60 @@
                     <div class="accordion" id="faqAccordion">
                         <div class="accordion-item bg-dark-custom text-light border-0 mb-3">
                             <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button bg-dark-custom text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <button class="accordion-button bg-dark-custom text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" data-i18n="faq-1-q">
                                     Est-ce que RPG Images Generator fonctionne avec tous les systèmes de jeu ?
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-muted">
+                                <div class="accordion-body text-muted" data-i18n="faq-1-a">
                                     Oui ! Notre outil est compatible avec tous les systèmes de jeu de rôle (D&D, Pathfinder, Cyberpunk, Call of Cthulhu, etc.). Vous pouvez générer des images adaptées à n'importe quel univers ou style.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item bg-dark-custom text-light border-0 mb-3">
                             <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed bg-dark-custom text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <button class="accordion-button collapsed bg-dark-custom text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" data-i18n="faq-2-q">
                                     Combien d'images puis-je générer ?
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-muted">
+                                <div class="accordion-body text-muted" data-i18n="faq-2-a">
                                     Pendant la phase bêta, vous aurez un quota de 100 images par mois. Nous prévoyons différents forfaits pour le lancement officiel, y compris un plan gratuit avec un nombre limité d'images et des plans premium pour les MJ et groupes plus actifs.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item bg-dark-custom text-light border-0 mb-3">
                             <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed bg-dark-custom text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <button class="accordion-button collapsed bg-dark-custom text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" data-i18n="faq-3-q">
                                     Faut-il des compétences techniques pour utiliser l'outil ?
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-muted">
+                                <div class="accordion-body text-muted" data-i18n="faq-3-a">
                                     Absolument pas ! Notre interface est conçue pour être intuitive et accessible à tous. Si vous savez utiliser Discord, vous saurez utiliser RPG Images Generator. Les commandes sont simples et l'interface web est guidée.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item bg-dark-custom text-light border-0 mb-3">
                             <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed bg-dark-custom text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <button class="accordion-button collapsed bg-dark-custom text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" data-i18n="faq-4-q">
                                     Quand sera disponible la version complète ?
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-muted">
+                                <div class="accordion-body text-muted" data-i18n="faq-4-a">
                                     Nous prévoyons de lancer la version complète dans les 3 prochains mois. Les membres de la bêta auront un accès prioritaire et des avantages exclusifs lors du lancement officiel.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item bg-dark-custom text-light border-0">
                             <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed bg-dark-custom text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <button class="accordion-button collapsed bg-dark-custom text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive" data-i18n="faq-5-q">
                                     Puis-je utiliser les images générées en dehors de Discord ?
                                 </button>
                             </h2>
                             <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body text-muted">
+                                <div class="accordion-body text-muted" data-i18n="faq-5-a">
                                     Oui, toutes les images générées sont téléchargeables et vous pouvez les utiliser pour vos fiches de personnage, vos notes de campagne, ou même pour illustrer vos récits de partie sur les réseaux sociaux.
                                 </div>
                             </div>
@@ -552,10 +838,10 @@
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="card p-5 text-center">
-                        <h2 class="display-5 fw-bold mb-4 text-white">Prêt à révolutionner vos parties de RPG ?</h2>
-                        <p class="lead mb-4 text-white">Rejoignez notre bêta et soyez parmi les premiers à transformer l'expérience visuelle de vos jeux de rôle.</p>
+                        <h2 class="display-5 fw-bold mb-4 text-white" data-i18n="cta-title">Prêt à révolutionner vos parties de RPG ?</h2>
+                        <p class="lead mb-4 text-white" data-i18n="cta-subtitle">Rejoignez notre bêta et soyez parmi les premiers à transformer l'expérience visuelle de vos jeux de rôle.</p>
                         <div class="d-flex justify-content-center">
-                            <a href="#waitlist" class="btn btn-primary btn-lg px-5 py-3">Rejoindre la bêta maintenant</a>
+                            <a href="#waitlist" class="btn btn-primary btn-lg px-5 py-3" data-i18n="cta-btn">Rejoindre la bêta maintenant</a>
                         </div>
                     </div>
                 </div>
@@ -568,8 +854,8 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
-                    <h5 class="fw-bold mb-3">RPG<span class="text-primary">Images</span>Generator</h5>
-                    <p class="text-muted">Un bot Discord qui révolutionne l'expérience visuelle de vos jeux de rôle avec des images générées par IA.</p>
+                    <h5 class="fw-bold mb-3" data-i18n="footer-title">RPG<span class="text-primary">Images</span>Generator</h5>
+                    <p class="text-muted" data-i18n="footer-desc">Un bot Discord qui révolutionne l'expérience visuelle de vos jeux de rôle avec des images générées par IA.</p>
                     <div class="d-flex gap-3 mt-4">
                         <a href="#" class="text-muted"><i class="fab fa-discord fa-lg"></i></a>
                         <a href="#" class="text-muted"><i class="fab fa-twitter fa-lg"></i></a>
@@ -578,30 +864,30 @@
                     </div>
                 </div>
                 <div class="col-lg-2">
-                    <h5 class="fw-bold mb-3">Liens</h5>
+                    <h5 class="fw-bold mb-3" data-i18n="footer-links">Liens</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#features" class="text-muted text-decoration-none">Fonctionnalités</a></li>
-                        <li class="mb-2"><a href="#how-it-works" class="text-muted text-decoration-none">Comment ça marche</a></li>
-                        <li class="mb-2"><a href="#use-cases" class="text-muted text-decoration-none">Cas d'utilisation</a></li>
-                        <li class="mb-2"><a href="#waitlist" class="text-muted text-decoration-none">Liste d'attente</a></li>
+                        <li class="mb-2"><a href="#features" class="text-muted text-decoration-none" data-i18n="nav-features">Fonctionnalités</a></li>
+                        <li class="mb-2"><a href="#how-it-works" class="text-muted text-decoration-none" data-i18n="nav-how-it-works">Comment ça marche</a></li>
+                        <li class="mb-2"><a href="#use-cases" class="text-muted text-decoration-none" data-i18n="nav-use-cases">Cas d'utilisation</a></li>
+                        <li class="mb-2"><a href="#waitlist" class="text-muted text-decoration-none" data-i18n="nav-waitlist">Liste d'attente</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2">
-                    <h5 class="fw-bold mb-3">Ressources</h5>
+                    <h5 class="fw-bold mb-3" data-i18n="footer-resources">Ressources</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Blog</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Documentation</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Tutoriels</a></li>
-                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Support</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none" data-i18n="footer-blog">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none" data-i18n="footer-docs">Documentation</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none" data-i18n="footer-tutorials">Tutoriels</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none" data-i18n="footer-support">Support</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
-                    <h5 class="fw-bold mb-3">Restez informé</h5>
-                    <p class="text-muted">Abonnez-vous à notre newsletter pour recevoir les dernières nouvelles et mises à jour.</p>
+                    <h5 class="fw-bold mb-3" data-i18n="footer-stay-informed">Restez informé</h5>
+                    <p class="text-muted" data-i18n="footer-newsletter">Abonnez-vous à notre newsletter pour recevoir les dernières nouvelles et mises à jour.</p>
                     <form class="mt-3">
                         <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Votre email">
-                            <button class="btn btn-primary" type="submit">S'abonner</button>
+                            <input type="email" class="form-control" data-i18n-placeholder="footer-email-placeholder" placeholder="Votre email">
+                            <button class="btn btn-primary" type="submit" data-i18n="footer-subscribe">S'abonner</button>
                         </div>
                     </form>
                 </div>
@@ -609,11 +895,11 @@
             <hr class="my-5" style="background-color: rgba(255, 255, 255, 0.1);">
             <div class="row">
                 <div class="col-md-6">
-                    <p class="text-muted mb-md-0">© 2023 RPG Images Generator. Tous droits réservés.</p>
+                    <p class="text-muted mb-md-0" data-i18n="footer-copyright">© 2023 RPG Images Generator. Tous droits réservés.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <a href="#" class="text-muted me-3 text-decoration-none">Politique de confidentialité</a>
-                    <a href="#" class="text-muted text-decoration-none">Conditions d'utilisation</a>
+                    <a href="#" class="text-muted me-3 text-decoration-none" data-i18n="footer-privacy">Politique de confidentialité</a>
+                    <a href="#" class="text-muted text-decoration-none" data-i18n="footer-terms">Conditions d'utilisation</a>
                 </div>
             </div>
         </div>
