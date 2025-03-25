@@ -3,72 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPG Images Generator - Bot Discord pour enrichir vos parties de jeu de rôle</title>
+    <title>AI RPG Image Generator - Fantasy Art & Character Creator for Tabletop Games</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="RPG Images Generator utilise l'intelligence artificielle pour générer des visuels immersifs pour vos parties de jeu de rôle sur Discord. Idéal pour les maîtres du jeu et les joueurs.">
-    <meta name="keywords" content="RPG, jeu de rôle, Discord, bot, IA, intelligence artificielle, génération d'images, MJ, maître du jeu, immersion, fantasy">
+    <meta name="description" content="RPG Images Generator: AI-powered fantasy art tool to create characters, environments, maps and creatures for your tabletop RPG games. Perfect for DMs and players on Discord.">
+    <meta name="keywords" content="AI RPG image generator, AI-powered fantasy art, RPG character creator AI, AI concept art generator, fantasy world builder AI, generate RPG environments AI, AI dungeon map generator, AI creature design tool, AI-generated RPG illustrations, AI fantasy artwork generator">
     <meta name="author" content="RPG Images Generator">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://aicreativity.co/rpg-images-generator/">
-    <meta property="og:title" content="RPG Images Generator - Bot Discord pour enrichir vos parties de jeu de rôle">
-    <meta property="og:description" content="Générez des visuels immersifs pour vos parties de RPG grâce à l'IA. Idéal pour les maîtres du jeu et les joueurs sur Discord.">
-    
+    <meta property="og:title" content="AI RPG Image Generator - Fantasy Art & Character Creator for Tabletop Games">
+    <meta property="og:description" content="Create stunning fantasy art, characters, environments, maps and creatures with our AI-powered RPG image generator. Perfect for enhancing your tabletop gaming experience.">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://aicreativity.co/rpg-images-generator/">
-    <meta property="twitter:title" content="RPG Images Generator - Bot Discord pour enrichir vos parties de jeu de rôle">
-    <meta property="twitter:description" content="Générez des visuels immersifs pour vos parties de RPG grâce à l'IA. Idéal pour les maîtres du jeu et les joueurs sur Discord.">
+    <meta property="twitter:title" content="AI RPG Image Generator - Fantasy Art & Character Creator for Tabletop Games">
+    <meta property="twitter:description" content="Create stunning fantasy art, characters, environments, maps and creatures with our AI-powered RPG image generator. Perfect for enhancing your tabletop gaming experience.">
     
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-     
-    <!-- Add these before your internationalization script -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
-    
-    <!-- Données structurées Schema.org -->
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "RPG Images Generator",
-          "applicationCategory": "UtilityApplication",
-          "operatingSystem": "Web, Discord",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "EUR",
-            "availability": "https://schema.org/ComingSoon"
-          },
-          "description": "Un bot Discord qui révolutionne l'expérience visuelle de vos jeux de rôle avec des images générées par IA."
-        }
-        </script>
     <!-- Internationalization Script -->
     <script>
         // Translations data
         const translations = {
             'en': {
-                'page-title': 'RPG Images Generator - Discord Bot to Enhance Your Role-Playing Games',
+                'page-title': 'AI RPG Image Generator - Fantasy Art & Character Creator for Tabletop Games',
                 'nav-features': 'Features',
                 'nav-how-it-works': 'How It Works',
                 'nav-use-cases': 'Use Cases',
                 'nav-waitlist': 'Waitlist',
                 'nav-join-beta': 'Join Beta',
                 
-                'hero-title': 'Enhance Your RPG Sessions with AI-Generated Images',
-                'hero-subtitle': 'A Discord bot that revolutionizes the visual experience of your role-playing games. Generate locations, characters, creatures, and objects tailored to your universe in seconds.',
+                'hero-title': 'AI RPG Image Generator: Create Fantasy Art for Your Tabletop Games',
+                'hero-subtitle': 'An AI-powered fantasy art tool that revolutionizes your role-playing games. Generate characters, environments, maps, creatures and concept art tailored to your universe in seconds.',
                 'hero-btn-join': 'Join Beta',
                 'hero-btn-how': 'How It Works',
                 
-                'features-title': 'Exceptional Features',
-                'features-subtitle': 'Discover how RPG Images Generator transforms your role-playing sessions',
+                'features-title': 'AI-Powered Fantasy Art Generator',
+                'features-subtitle': 'Discover how our AI RPG image generator transforms your role-playing experience with stunning fantasy artwork',
                 'feature-1-title': 'AI Image Generation',
                 'feature-1-desc': 'Create high-quality visuals adapted to your game universe in seconds.',
                 'feature-2-title': 'Discord Integration',
@@ -161,23 +133,37 @@
                 'footer-subscribe': 'Subscribe',
                 'footer-copyright': '© 2023 RPG Images Generator. All rights reserved.',
                 'footer-privacy': 'Privacy Policy',
-                'footer-terms': 'Terms of Use'
+                'footer-terms': 'Terms of Use',
+                'ai-rpg-tools-title': 'Complete AI RPG Toolkit',
+                'ai-rpg-tools-subtitle': 'Everything you need to visually enhance your tabletop gaming experience',
+                'character-creator-title': 'RPG Character Creator AI',
+                'character-creator-desc': 'Generate detailed character portraits based on race, class, equipment and personality traits. Perfect for players and NPCs.',
+                'map-generator-title': 'AI Dungeon Map Generator',
+                'map-generator-desc': 'Create detailed dungeon layouts, city maps, and wilderness environments with our AI-powered mapping tool.',
+                'creature-design-title': 'AI Creature Design Tool',
+                'creature-design-desc': 'Design unique monsters, creatures and beasts for your campaigns with customizable features and styles.',
+                'world-builder-title': 'Fantasy World Builder AI',
+                'world-builder-desc': 'Create breathtaking landscapes, cities, and architectural wonders for your fantasy worlds.',
+                'concept-art-title': 'AI Concept Art Generator',
+                'concept-art-desc': 'Generate concept art for your campaign\'s key moments, items, and scenes to enhance storytelling.',
+                'environments-title': 'Generate RPG Environments',
+                'environments-desc': 'Create immersive forests, caves, castles, taverns and other key locations for your adventures.'
             },
             'fr': {
-                'page-title': 'RPG Images Generator - Bot Discord pour enrichir vos parties de jeu de rôle',
+                'page-title': 'Générateur d\'Images RPG IA - Art Fantasy & Créateur de Personnages pour Jeux de Rôle',
                 'nav-features': 'Fonctionnalités',
                 'nav-how-it-works': 'Comment ça marche',
                 'nav-use-cases': 'Cas d\'utilisation',
                 'nav-waitlist': 'Liste d\'attente',
                 'nav-join-beta': 'Rejoindre la bêta',
                 
-                'hero-title': 'Enrichissez vos parties de RPG avec des images générées par IA',
-                'hero-subtitle': 'Un bot Discord qui révolutionne l\'expérience visuelle de vos jeux de rôle. Générez des lieux, personnages, créatures et objets adaptés à votre univers en quelques secondes.',
+                'hero-title': 'Générateur d\'Images RPG IA : Créez de l\'Art Fantasy pour vos Jeux de Rôle',
+                'hero-subtitle': 'Un outil d\'art fantasy propulsé par l\'IA qui révolutionne vos jeux de rôle. Générez des personnages, environnements, cartes, créatures et concepts artistiques adaptés à votre univers en quelques secondes.',
                 'hero-btn-join': 'Rejoindre la bêta',
                 'hero-btn-how': 'Comment ça marche',
                 
-                'features-title': 'Fonctionnalités exceptionnelles',
-                'features-subtitle': 'Découvrez comment RPG Images Generator transforme vos parties de jeu de rôle',
+                'features-title': 'Générateur d\'Art Fantasy Propulsé par l\'IA',
+                'features-subtitle': 'Découvrez comment notre générateur d\'images RPG IA transforme votre expérience de jeu de rôle avec des illustrations fantasy époustouflantes',
                 'feature-1-title': 'Génération d\'images IA',
                 'feature-1-desc': 'Créez des visuels de haute qualité adaptés à votre univers de jeu en quelques secondes.',
                 'feature-2-title': 'Intégration Discord',
@@ -269,7 +255,21 @@
                 'footer-subscribe': 'S\'abonner',
                 'footer-copyright': '© 2023 RPG Images Generator. Tous droits réservés.',
                 'footer-privacy': 'Politique de confidentialité',
-                'footer-terms': 'Conditions d\'utilisation'
+                'footer-terms': 'Conditions d\'utilisation',
+                'ai-rpg-tools-title': 'Boîte à Outils RPG IA Complète',
+                'ai-rpg-tools-subtitle': 'Tout ce dont vous avez besoin pour améliorer visuellement votre expérience de jeu de rôle',
+                'character-creator-title': 'Créateur de Personnages RPG IA',
+                'character-creator-desc': 'Générez des portraits de personnages détaillés basés sur la race, la classe, l\'équipement et les traits de personnalité. Parfait pour les joueurs et les PNJ.',
+                'map-generator-title': 'Générateur de Cartes de Donjon IA',
+                'map-generator-desc': 'Créez des plans de donjons détaillés, des cartes de villes et des environnements sauvages avec notre outil de cartographie propulsé par l\'IA.',
+                'creature-design-title': 'Outil de Conception de Créatures IA',
+                'creature-design-desc': 'Concevez des monstres, créatures et bêtes uniques pour vos campagnes avec des caractéristiques et styles personnalisables.',
+                'world-builder-title': 'Constructeur de Monde Fantasy IA',
+                'world-builder-desc': 'Créez des paysages à couper le souffle, des villes et des merveilles architecturales pour vos mondes fantasy.',
+                'concept-art-title': 'Générateur d\'Art Conceptuel IA',
+                'concept-art-desc': 'Générez des concepts artistiques pour les moments clés, objets et scènes de votre campagne pour améliorer la narration.',
+                'environments-title': 'Générer des Environnements RPG',
+                'environments-desc': 'Créez des forêts immersives, grottes, châteaux, tavernes et autres lieux clés pour vos aventures.'
             }
         };
         // Convert translations to i18next format
@@ -509,7 +509,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-darker fixed-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">RPG<span class="text-primary">Images</span>Generator</a>
+            <a class="navbar-brand fw-bold" href="#">AI <span class="text-primary">RPG Image</span> Generator</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -617,6 +617,80 @@
             </div>
         </div>
     </section>
+
+</section>
+
+<!-- New Section: AI RPG Tools -->
+<section class="py-5 my-5 bg-darker">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold" data-i18n="ai-rpg-tools-title">Boîte à Outils RPG IA Complète</h2>
+            <p class="lead text-muted" data-i18n="ai-rpg-tools-subtitle">Tout ce dont vous avez besoin pour améliorer visuellement votre expérience de jeu de rôle</p>
+        </div>
+        
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-user-circle fa-3x text-primary mb-3"></i>
+                        <h3 class="card-title" data-i18n="character-creator-title">Créateur de Personnages RPG IA</h3>
+                        <p class="card-text text-muted" data-i18n="character-creator-desc">Générez des portraits de personnages détaillés basés sur la race, la classe, l'équipement et les traits de personnalité. Parfait pour les joueurs et les PNJ.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-map fa-3x text-primary mb-3"></i>
+                        <h3 class="card-title" data-i18n="map-generator-title">Générateur de Cartes de Donjon IA</h3>
+                        <p class="card-text text-muted" data-i18n="map-generator-desc">Créez des plans de donjons détaillés, des cartes de villes et des environnements sauvages avec notre outil de cartographie propulsé par l'IA.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-dragon fa-3x text-primary mb-3"></i>
+                        <h3 class="card-title" data-i18n="creature-design-title">Outil de Conception de Créatures IA</h3>
+                        <p class="card-text text-muted" data-i18n="creature-design-desc">Concevez des monstres, créatures et bêtes uniques pour vos campagnes avec des caractéristiques et styles personnalisables.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row g-4 mt-3">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-mountain fa-3x text-primary mb-3"></i>
+                        <h3 class="card-title" data-i18n="world-builder-title">Constructeur de Monde Fantasy IA</h3>
+                        <p class="card-text text-muted" data-i18n="world-builder-desc">Créez des paysages à couper le souffle, des villes et des merveilles architecturales pour vos mondes fantasy.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-paint-brush fa-3x text-primary mb-3"></i>
+                        <h3 class="card-title" data-i18n="concept-art-title">Générateur d'Art Conceptuel IA</h3>
+                        <p class="card-text text-muted" data-i18n="concept-art-desc">Générez des concepts artistiques pour les moments clés, objets et scènes de votre campagne pour améliorer la narration.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-tree fa-3x text-primary mb-3"></i>
+                        <h3 class="card-title" data-i18n="environments-title">Générer des Environnements RPG</h3>
+                        <p class="card-text text-muted" data-i18n="environments-desc">Créez des forêts immersives, grottes, châteaux, tavernes et autres lieux clés pour vos aventures.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
 
     <!-- How It Works Section -->
     <section class="py-5 my-5 bg-darker" id="how-it-works">
@@ -791,7 +865,7 @@
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body text-muted" data-i18n="faq-1-a">
-                                    Oui ! Notre outil est compatible avec tous les systèmes de jeu de rôle (D&D, Pathfinder, Cyberpunk, Call of Cthulhu, etc.). Vous pouvez générer des images adaptées à n'importe quel univers ou style.
+                                    Oui ! Notre outil est compatible avec tous les systèmes de jeu de rôle (D&D, Pathfinder, Cyberpunk, Call of Cthulhu, etc.). You can generate images adapted to any universe or style.
                                 </div>
                             </div>
                         </div>
@@ -926,3 +1000,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<!-- Données structurées Schema.org -->
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "AI RPG Image Generator",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Web, Discord",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR",
+        "availability": "https://schema.org/ComingSoon"
+      },
+      "description": "AI-powered fantasy art generator for creating RPG characters, environments, maps and creatures for tabletop games.",
+      "keywords": "AI RPG image generator, AI-powered fantasy art, RPG character creator AI, AI concept art generator, fantasy world builder AI, AI dungeon map generator"
+    }
+</script>
