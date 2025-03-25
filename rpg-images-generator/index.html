@@ -22,6 +22,17 @@
     <meta property="twitter:title" content="AI RPG Image Generator - Fantasy Art & Character Creator for Tabletop Games">
     <meta property="twitter:description" content="Create stunning fantasy art, characters, environments, maps and creatures with our AI-powered RPG image generator. Perfect for enhancing your tabletop gaming experience.">
     
+    <!-- Include jQuery first -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Include i18next libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <!-- Internationalization Script -->
     <script>
         // Translations data
@@ -352,7 +363,6 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://via.placeholder.com/1920x1080/23272A/23272A?text=');
             background-size: cover;
             opacity: 0.1;
             z-index: 0;
@@ -618,80 +628,77 @@
         </div>
     </section>
 
-</section>
 
-<!-- New Section: AI RPG Tools -->
-<section class="py-5 my-5 bg-darker">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2 class="display-5 fw-bold" data-i18n="ai-rpg-tools-title">Boîte à Outils RPG IA Complète</h2>
-            <p class="lead text-muted" data-i18n="ai-rpg-tools-subtitle">Tout ce dont vous avez besoin pour améliorer visuellement votre expérience de jeu de rôle</p>
-        </div>
-        
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-user-circle fa-3x text-primary mb-3"></i>
-                        <h3 class="card-title" data-i18n="character-creator-title">Créateur de Personnages RPG IA</h3>
-                        <p class="card-text text-muted" data-i18n="character-creator-desc">Générez des portraits de personnages détaillés basés sur la race, la classe, l'équipement et les traits de personnalité. Parfait pour les joueurs et les PNJ.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-map fa-3x text-primary mb-3"></i>
-                        <h3 class="card-title" data-i18n="map-generator-title">Générateur de Cartes de Donjon IA</h3>
-                        <p class="card-text text-muted" data-i18n="map-generator-desc">Créez des plans de donjons détaillés, des cartes de villes et des environnements sauvages avec notre outil de cartographie propulsé par l'IA.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-dragon fa-3x text-primary mb-3"></i>
-                        <h3 class="card-title" data-i18n="creature-design-title">Outil de Conception de Créatures IA</h3>
-                        <p class="card-text text-muted" data-i18n="creature-design-desc">Concevez des monstres, créatures et bêtes uniques pour vos campagnes avec des caractéristiques et styles personnalisables.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row g-4 mt-3">
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-mountain fa-3x text-primary mb-3"></i>
-                        <h3 class="card-title" data-i18n="world-builder-title">Constructeur de Monde Fantasy IA</h3>
-                        <p class="card-text text-muted" data-i18n="world-builder-desc">Créez des paysages à couper le souffle, des villes et des merveilles architecturales pour vos mondes fantasy.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-paint-brush fa-3x text-primary mb-3"></i>
-                        <h3 class="card-title" data-i18n="concept-art-title">Générateur d'Art Conceptuel IA</h3>
-                        <p class="card-text text-muted" data-i18n="concept-art-desc">Générez des concepts artistiques pour les moments clés, objets et scènes de votre campagne pour améliorer la narration.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-tree fa-3x text-primary mb-3"></i>
-                        <h3 class="card-title" data-i18n="environments-title">Générer des Environnements RPG</h3>
-                        <p class="card-text text-muted" data-i18n="environments-desc">Créez des forêts immersives, grottes, châteaux, tavernes et autres lieux clés pour vos aventures.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- How It Works Section -->
-
+    <!-- New Section: AI RPG Tools -->
+    <section class="py-5 my-5 bg-darker">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold" data-i18n="ai-rpg-tools-title">Boîte à Outils RPG IA Complète</h2>
+                <p class="lead text-muted" data-i18n="ai-rpg-tools-subtitle">Tout ce dont vous avez besoin pour améliorer visuellement votre expérience de jeu de rôle</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-user-circle fa-3x text-primary mb-3"></i>
+                            <h3 class="card-title" data-i18n="character-creator-title">Créateur de Personnages RPG IA</h3>
+                            <p class="card-text text-muted" data-i18n="character-creator-desc">Générez des portraits de personnages détaillés basés sur la race, la classe, l'équipement et les traits de personnalité. Parfait pour les joueurs et les PNJ.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-map fa-3x text-primary mb-3"></i>
+                            <h3 class="card-title" data-i18n="map-generator-title">Générateur de Cartes de Donjon IA</h3>
+                            <p class="card-text text-muted" data-i18n="map-generator-desc">Créez des plans de donjons détaillés, des cartes de villes et des environnements sauvages avec notre outil de cartographie propulsé par l'IA.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-dragon fa-3x text-primary mb-3"></i>
+                            <h3 class="card-title" data-i18n="creature-design-title">Outil de Conception de Créatures IA</h3>
+                            <p class="card-text text-muted" data-i18n="creature-design-desc">Concevez des monstres, créatures et bêtes uniques pour vos campagnes avec des caractéristiques et styles personnalisables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4 mt-3">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-mountain fa-3x text-primary mb-3"></i>
+                            <h3 class="card-title" data-i18n="world-builder-title">Constructeur de Monde Fantasy IA</h3>
+                            <p class="card-text text-muted" data-i18n="world-builder-desc">Créez des paysages à couper le souffle, des villes et des merveilles architecturales pour vos mondes fantasy.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-paint-brush fa-3x text-primary mb-3"></i>
+                            <h3 class="card-title" data-i18n="concept-art-title">Générateur d'Art Conceptuel IA</h3>
+                            <p class="card-text text-muted" data-i18n="concept-art-desc">Générez des concepts artistiques pour les moments clés, objets et scènes de votre campagne pour améliorer la narration.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tree fa-3x text-primary mb-3"></i>
+                            <h3 class="card-title" data-i18n="environments-title">Générer des Environnements RPG</h3>
+                            <p class="card-text text-muted" data-i18n="environments-desc">Créez des forêts immersives, grottes, châteaux, tavernes et autres lieux clés pour vos aventures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- How It Works Section -->
     <section class="py-5 my-5 bg-darker" id="how-it-works">
         <div class="container">
@@ -746,7 +753,6 @@
             </div>
         </div>
     </section>
-
     <!-- Use Cases Section -->
     <section class="py-5 my-5" id="use-cases">
         <div class="container">
@@ -801,10 +807,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Testimonials Section -->
-    
-
     <!-- Waitlist Section -->
     <section class="py-5 my-5" id="waitlist">
         <div class="container">
@@ -845,7 +847,6 @@
             </div>
         </div>
     </section>
-
     <!-- FAQ Section -->
     <section class="py-5 my-5 bg-darker">
         <div class="container">
@@ -922,7 +923,6 @@
             </div>
         </div>
     </section>
-
     <!-- CTA Section -->
     <section class="py-5 my-5">
         <div class="container">
@@ -939,7 +939,6 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="py-5">
         <div class="container">
@@ -995,27 +994,26 @@
             </div>
         </div>
     </footer>
-
+    <!-- Données structurées Schema.org -->
+    <script type="application/ld+json">
+        {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "AI RPG Image Generator",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "Web, Discord",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/ComingSoon"
+        },
+        "description": "AI-powered fantasy art generator for creating RPG characters, environments, maps and creatures for tabletop games.",
+        "keywords": "AI RPG image generator, AI-powered fantasy art, RPG character creator AI, AI concept art generator, fantasy world builder AI, AI dungeon map generator"
+        }
+    </script>
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 
-<!-- Données structurées Schema.org -->
-<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "AI RPG Image Generator",
-      "applicationCategory": "UtilityApplication",
-      "operatingSystem": "Web, Discord",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR",
-        "availability": "https://schema.org/ComingSoon"
-      },
-      "description": "AI-powered fantasy art generator for creating RPG characters, environments, maps and creatures for tabletop games.",
-      "keywords": "AI RPG image generator, AI-powered fantasy art, RPG character creator AI, AI concept art generator, fantasy world builder AI, AI dungeon map generator"
-    }
-</script>
